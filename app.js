@@ -71,8 +71,6 @@ var nms = new NodeMediaServer(config)
 nms.run();
 
 setInterval(() => {
-    console.log('live:' + live.toString());
-    console.log('pushed:' + pushed.toString());
     if(live) {
         var apiurl = "https://api.twitch.tv/helix/streams?user_login=" + twitch_channel;
         var options = {
@@ -95,14 +93,12 @@ setInterval(() => {
         });
 
         if(viewers > 499 && pushed) {
-            console.log("stoppe PUSH");
             pushed = false;
             setTimeout(() => {
                 app = nms.nls.onRelayPush(ingest, 'interuppted', 'OFFLINE');
             }, 2000);
         }
         else if(viewers < 500 && !pushed) {
-            console.log("starte PUSH");
             setTimeout(() => {
                 app = nms.nls.onRelayPush(ingest, 'live', config.auth.secret);
             }, 2000);
