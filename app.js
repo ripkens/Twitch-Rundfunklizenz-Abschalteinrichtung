@@ -6,7 +6,7 @@
 ////////// CONFIG
 let stream_key = '';
 let twitch_stream_key = '';
-let bandwidth_test = true; // if true, check you stream here: https://inspector.twitch.tv
+let bandwidth_test = true; // if true, check your stream here: https://inspector.twitch.tv
 let twitch_server = 'live-fra02'; // https://stream.twitch.tv/ingests/
 let twitch_channel = '';
 let twitch_api_client_id = '';
@@ -18,7 +18,7 @@ let password = 'changeme';
 let ffmpeg_path = '/opt/stream/ffmpeg/ffmpeg';
 let offline_video = '/opt/stream/video.mp4';
 
-////////// DONE. use node.app.js to start the server
+////////// DONE. Use node.app.js to start streaming
 
 // ----------------------------------------------------------------------------------------
 
@@ -93,14 +93,10 @@ setInterval(() => {
 
         if(viewers > 499 && pushed) {
             pushed = false;
-            setTimeout(() => {
-                nms.nls.onRelayPush(ingest, 'interuppted', 'OFFLINE');
-            }, 2000);
+            nms.nls.onRelayPush(ingest, 'interuppted', 'OFFLINE');
         }
         else if(viewers < 500 && !pushed) {
-            setTimeout(() => {
-                nms.nls.onRelayPush(ingest, 'live', config.auth.secret);
-            }, 2000);
+            nms.nls.onRelayPush(ingest, 'live', config.auth.secret);
             pushed = true;
         }
 
@@ -108,20 +104,18 @@ setInterval(() => {
 }, 10000);
 
 nms.on('prePublish', (id, StreamPath, args) => {
-  console.log('[NodeEvent on prePublish]', `id=${id} StreamPath=${StreamPath} args=${JSON.stringify(args)}`);
   if(StreamPath == '/live/' + config.auth.secret) {
     live = true;
   }
 });
 
 nms.on('donePublish', (id, StreamPath, args) => {
-  console.log('[NodeEvent on donePublish]', `id=${id} StreamPath=${StreamPath} args=${JSON.stringify(args)}`);
   if(StreamPath == '/live/' + config.auth.secret) {
     live = false;
-  }
-  if(pushed) {
-    let session = nms.getSession(id);
-    session.end();
-    pushed = false;
+    if(pushed) {
+      let session = nms.getSession(id);
+      session.end();
+      pushed = false;
+    }
   }
 });
