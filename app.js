@@ -28,7 +28,7 @@ const fetchUrl = require("fetch").fetchUrl;
 
 const ingest = 'rtmp://' + twitch_server + '.twitch.tv/app/' + twitch_stream_key + (bandwidth_test ? '?bandwidthtest=true' : '');
 
-const config = {:
+const config = {
   rtmp: {
     port: 1935,
     chunk_size: 60000,
