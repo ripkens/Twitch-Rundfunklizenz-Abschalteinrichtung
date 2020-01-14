@@ -28,3 +28,12 @@ Konfiguriere die Einstellungen in app.js
 
 ## Start
 Starte den Server mit node app.js
+
+# Author
+Marcus Ripkens aka DampflokTV
+
+- https://streamelements.com/dampfloktv
+- https://twitch.tv/dampfloktv
+- https://twitter.com/DampflokTV
+- https://discord.dampfloktv.de/
+
