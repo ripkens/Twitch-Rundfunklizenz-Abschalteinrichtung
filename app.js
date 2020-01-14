@@ -1,7 +1,7 @@
 /*
                        Twitch Abschalteinrichtung (Rundfunklizenzbestimmungen)
                                      Copyright 2020 Marcus Ripkens
-               Frei verwendbar. Verkauf und entfernung des Copyrights sind jedoch untersagt!
+               Frei verwendbar. Verkauf und entfernen des Copyrights sind jedoch untersagt!
 */
 
 
