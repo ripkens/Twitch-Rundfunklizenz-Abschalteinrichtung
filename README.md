@@ -1,6 +1,6 @@
 # Twitch Rundfunklizenz Abschalteinrichtung
 
-### Streaming Server der die Übertagung unterbricht sobald mehr als 500 Zuschauer den Stream schauen.
+### Streaming Server der die Übertagung unterbricht sobald mehr als 499 Zuschauer den Stream schauen.
 
 Das script startet einen RTMP Server und einen lokalen Stream mit einem Video (hier kann jedes MP4 file verwendet werden)
 
