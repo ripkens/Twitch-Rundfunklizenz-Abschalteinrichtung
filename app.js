@@ -4,19 +4,19 @@
 // Use Stream-Key you have or will set in the CONFIG section
 
 ////////// CONFIG
-let stream_key = '';
-let twitch_stream_key = '';
-let bandwidth_test = true; // if true, check your stream here: https://inspector.twitch.tv
+let stream_key = ''; // Stream Key used when sending stream to this app
+let twitch_stream_key = ''; // Stream-Key used when relaying to twitch
+let bandwidth_test = true; // if true, stream will not be visible to viewers but here: https://inspector.twitch.tv
 let twitch_server = 'live-fra02'; // https://stream.twitch.tv/ingests/
-let twitch_channel = '';
-let twitch_api_client_id = '';
+let twitch_channel = ''; // Your Twitch channel name
+let twitch_api_client_id = ''; // Client ID of your Twitch app, create one in Twitch Developer Console first.
 
 ////////// Webinterface port + login
-let webport = 8088;
+let webport = 8088; // Admin interface on http://<HOST_NAME>/admin
 let username = 'admin';
 let password = 'changeme';
-let ffmpeg_path = '/opt/stream/ffmpeg/ffmpeg';
-let offline_video = '/opt/stream/video.mp4';
+let ffmpeg_path = '/opt/stream/ffmpeg/ffmpeg'; // Download here: https://johnvansickle.com/ffmpeg/
+let offline_video = '/opt/stream/video.mp4'; // You have to provide your own video!!
 
 ////////// DONE. Use node.app.js to start streaming
 
