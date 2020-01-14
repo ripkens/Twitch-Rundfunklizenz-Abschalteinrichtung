@@ -12,8 +12,8 @@ Der Stream wird wieder übertragen soabld die Zuschaueranzahl wieder unter 500 g
 
 Verwendete freie Software:
 
-https://github.com/illuspas/Node-Media-Server
-https://johnvansickle.com/ffmpeg/
+- https://github.com/illuspas/Node-Media-Server
+- https://johnvansickle.com/ffmpeg/
 
 
 ## Installation
