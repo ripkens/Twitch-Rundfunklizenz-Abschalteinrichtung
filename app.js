@@ -103,7 +103,7 @@ setInterval(() => {
             pushed = false;
             nms.nls.onRelayPush(ingest, 'interuppted', 'OFFLINE');
         }
-        else if(viewers < 500 && !pushed) {
+        else {
             nms.nls.onRelayPush(ingest, 'live', config.auth.secret);
             pushed = true;
         }
