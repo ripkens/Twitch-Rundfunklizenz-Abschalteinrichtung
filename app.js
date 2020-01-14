@@ -1,3 +1,11 @@
+/*
+                       Twitch Abschalteinrichtung (Rundfunklizenzbestimmungen)
+                                     Copyright 2020 Marcus Ripkens
+               Frei verwendbar. Verkauf und entfernung des Copyrights sind jedoch untersagt!
+*/
+
+
+
 ////////// USAGE (OBS)
 // rtmp://<HOST_NAME>/live.
 // Use localhost if you run this script on your local computer, use IP or HostName if on remote server!
