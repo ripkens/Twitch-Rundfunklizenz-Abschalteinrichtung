@@ -65,7 +65,6 @@ const config = {:
 let live = false;
 let pushed = false;
 let viewers = 0;
-let app = '';
 
 var nms = new NodeMediaServer(config)
 nms.run();
@@ -95,12 +94,12 @@ setInterval(() => {
         if(viewers > 499 && pushed) {
             pushed = false;
             setTimeout(() => {
-                app = nms.nls.onRelayPush(ingest, 'interuppted', 'OFFLINE');
+                nms.nls.onRelayPush(ingest, 'interuppted', 'OFFLINE');
             }, 2000);
         }
         else if(viewers < 500 && !pushed) {
             setTimeout(() => {
-                app = nms.nls.onRelayPush(ingest, 'live', config.auth.secret);
+                nms.nls.onRelayPush(ingest, 'live', config.auth.secret);
             }, 2000);
             pushed = true;
         }
