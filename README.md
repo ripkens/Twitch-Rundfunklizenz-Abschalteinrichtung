@@ -10,7 +10,11 @@ Alle 10 Sekunden prüft das Script wieviele Zuschauer gerade den Kanal schauen.
 Sollten es mehr als 499 Zuschauer sein, wird der Stream durch das Video ersetzt.
 Der Stream wird wieder übertragen soabld die Zuschaueranzahl wieder unter 500 gefallen ist.
 
-Verwendete freie Software: https://github.com/illuspas/Node-Media-Server
+Verwendete freie Software:
+
+https://github.com/illuspas/Node-Media-Server
+https://johnvansickle.com/ffmpeg/
+
 
 ## Installation
 
