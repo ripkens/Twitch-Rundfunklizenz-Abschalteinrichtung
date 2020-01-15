@@ -100,16 +100,24 @@ setInterval(() => {
         });
 
         if(viewers > 499 && pushed) {
-            pushed = false;
-            nms.nls.onRelayPush(ingest, 'interuppted', 'OFFLINE');
+            relayVideo();
         }
-        else {
-            nms.nls.onRelayPush(ingest, 'live', config.auth.secret);
-            pushed = true;
+        else if(viewers < 500 && !pushed) {
+            relayLiveStream();
         }
 
     }
 }, 10000);
+
+function relayLiveStream() {
+    nms.nls.onRelayPush(ingest, 'live', config.auth.secret);
+    pushed = true;
+}
+
+function relayVideo() {
+    pushed = false;
+    nms.nls.onRelayPush(ingest, 'interuppted', 'OFFLINE');
+}
 
 nms.on('prePublish', (id, StreamPath, args) => {
   if(StreamPath == '/live/' + config.auth.secret) {
@@ -120,10 +128,7 @@ nms.on('prePublish', (id, StreamPath, args) => {
 nms.on('donePublish', (id, StreamPath, args) => {
   if(StreamPath == '/live/' + config.auth.secret) {
     live = false;
-    if(pushed) {
-      let session = nms.getSession(id);
-      session.end();
-      pushed = false;
-    }
+    pushed = false;
   }
 });
+
