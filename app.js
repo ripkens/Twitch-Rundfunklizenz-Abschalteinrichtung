@@ -26,7 +26,7 @@ let password = 'changeme';
 let ffmpeg_path = '/opt/stream/ffmpeg/ffmpeg'; // Download here: https://johnvansickle.com/ffmpeg/
 let offline_video = '/opt/stream/video.mp4'; // You have to provide your own video!!
 
-////////// DONE. Use node.app.js to start streaming
+////////// DONE. Use "node app.js" or pm2, forever to start streaming
 
 // ----------------------------------------------------------------------------------------
 
